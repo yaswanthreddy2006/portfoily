@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: rgb(77, 77, 117);
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.navbar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 25px 9%;
+  background: rgb(218, 127, 210);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+.navbar .logo{
+  font-size: 30px;
+  font-weight: 700;
+}
+.navbar ul{
+  display: flex;
+}
+.navbar ul li{
+  list-style: none;
+  margin-left: 35px;
+}
+.navbar ul li a{
+  font-size: 20px;
+  font-weight: 400;
+  transition: .5s;
+}
+.navbar ul li:hover a,
+.navbar ul li.active a{
+  color: lightgreen;
+
+
+}
+.home{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 60px 9% 0;
+  color: white;
+
+}
+.home-info h1{
+  font-size: 55px;
+}
+.home-info h2{
+  font-size: 32px;
+  margin-top: -10px;
+
+}
+.home-info p{
+  font-size: 20px;
+  margin: 20px 0 25px;
+}
+.home-info .home-btn{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.btn{
+  background: white;
+  display: inline-block;
+  padding: 12px 30px;
+  background: rgb(120, 203, 171);
+  border: 2px solid white;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+}
+.btn:hover{
+  background: transparent;
+  color: white;
+  transition: .5s;
+}
+.home-info .home-btn .social-icons a{
+  display: inline;
+  padding: 8px;
+  border: 2px solid white;
+  border-radius: 100%;
+  font-size: 20px;
+  color: white;
+  margin: 0 8px;
+  transition: .4s;
+
+}
+.home-info .home-btn .social-icons a:hover{
+  background: white;
+  color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.home-img .home-box{
+  width: 32vw;
+  height: 32vw;
+  background: red;
+  border-radius: 50%;
+}
+
+
+.home-img .img-box .img-item img{
+  border-radius: 50%;
+  display: block;
+  width: 85%;
+  object-fit: cover;
+}
