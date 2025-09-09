@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Weather Map - 10 Day Forecast</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-globe-americas"></i> Global Weather Map</h1>
+            <p>Real-time weather data with 10-day forecasts for locations worldwide</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="locationSearch" placeholder="Search for a city or location...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="weather-toggle">
+                <button id="toggleView" class="toggle-btn">
+                    <i class="fas fa-list"></i> List View
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Map Container -->
+            <div id="map" class="map-container"></div>
+            
+            <!-- Weather Details Panel -->
+            <div id="weatherPanel" class="weather-panel">
+                <div class="panel-header">
+                    <h3 id="selectedLocation">Select a location on the map</h3>
+                    <button id="closePanel" class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                
+                <!-- Current Weather -->
+                <div id="currentWeather" class="current-weather" style="display: none;">
+                    <div class="weather-main">
+                        <div class="temperature">
+                            <span id="currentTemp">--</span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <div class="weather-info">
+                            <div class="weather-icon">
+                                <i id="weatherIcon" class="fas fa-sun"></i>
+                            </div>
+                            <div class="weather-desc">
+                                <span id="weatherDescription">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Visibility</span>
+                            <span id="visibility">-- km</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind Speed</span>
+                            <span id="windSpeed">-- m/s</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Feels Like</span>
+                            <span id="feelsLike">--°C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10-Day Forecast -->
+                <div id="forecastContainer" class="forecast-container" style="display: none;">
+                    <h4>10-Day Forecast</h4>
+                    <div id="forecastList" class="forecast-list">
+                        <!-- Forecast items will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="loading-spinner">
+                <i class="fas fa-cloud-sun"></i>
+                <p>Loading weather data...</p>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="errorText">Something went wrong. Please try again.</span>
+            <button id="closeError" class="close-error-btn">×</button>
+        </div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
